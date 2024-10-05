@@ -19,6 +19,11 @@ export class QuizComponent {
   config = inject(NgbModalConfig);
   router = inject(Router);
 
+
+  //método para listar preguntas
+
+  //método para listar preguntas por id
+
  //Pdt backend
  /*  showAnswer(questionId: number) {
     this.modalService.open(AnswerComponent).result.then((result) => {
