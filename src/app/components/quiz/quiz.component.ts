@@ -3,7 +3,6 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { AnswerComponent } from './answer/answer.component';
-import { ScoreComponent } from '../quiz/score/score.component';
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
 import { Question } from '../../models/question.model';
@@ -11,7 +10,7 @@ import { Question } from '../../models/question.model';
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [CommonModule, RouterModule, ScoreComponent],
+  imports: [CommonModule, RouterModule],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss'
 })
@@ -23,12 +22,8 @@ export class QuizComponent implements OnInit {
   idList: string[] = [];
   selectedId: string = '';
   questions: Question[] = [];
-  score: number = 0;
-  highScore: number = 100; // Ejemplo de valor
-  lives: number = 3;
 
   constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal) {}
-
 
   ngOnInit() {
     this.getIds();
@@ -57,7 +52,6 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  //método para obtener pregunta por id
   getQuestionById(id: string): void {
     this.quizService.getQuestionById(id).subscribe(
       (data: Question) => {
