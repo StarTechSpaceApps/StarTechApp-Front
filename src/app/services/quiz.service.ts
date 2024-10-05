@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { AnswerSchema } from '../models/answer.interface';
+import { Question } from '../models/question.model';
 
 //añadir url desde environment
 
