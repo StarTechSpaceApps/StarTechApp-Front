@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { config } from '../../app.config.server';
 import { AnswerComponent } from '../answer/answer.component';
 import { ScoreComponent } from '../quiz/score/score.component';
 import { Router } from '@angular/router';
@@ -16,7 +15,7 @@ import { Question } from '../../models/question.model';
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss'
 })
-export class QuizComponent {
+export class QuizComponent implements OnInit {
 
   modalService = inject(NgbModal);
   config = inject(NgbModalConfig);
@@ -28,21 +27,14 @@ export class QuizComponent {
   highScore: number = 100; // Ejemplo de valor
   lives: number = 3;
 
-
+  ngOnInit() {
+    this.getQuestion();
+  }
 
   //método para obtener pregunta random
-/*   getRandomQuestion() {
-    this.quizService.getRandomQuestion().subscribe(
-      (data: Question[]) => {
-        this.question = data;
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  } */
+  getQuestion() {}
 
-  //método para listar preguntas por id
+  //método para recorrer array id
 
   //método para mostrar orden aleatorio de botones
 

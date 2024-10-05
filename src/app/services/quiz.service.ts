@@ -14,7 +14,9 @@ export class QuizService {
   public question: Question[] = [];
   public httpClient = inject(HttpClient);
 
-  //getRandomQuestion(): Observable<Question[]> {}
+  getRandomQuestion(): Observable<Question[]> {
+    return this.httpClient.get<Question[]>(`${endpoint}questions/random`);
+  }
 
   //getQuestionById(id: number): Observable<Question> {}
 
