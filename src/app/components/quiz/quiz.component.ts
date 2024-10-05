@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
-import { AnswerComponent } from '../answer/answer.component';
+import { AnswerComponent } from './answer/answer.component';
 import { ScoreComponent } from '../quiz/score/score.component';
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
@@ -17,9 +17,7 @@ import { Question } from '../../models/question.model';
 })
 export class QuizComponent implements OnInit {
 
-  modalService = inject(NgbModal);
   config = inject(NgbModalConfig);
-  router = inject(Router);
   quizService = inject(QuizService);
 
   idList: string[] = [];
@@ -28,6 +26,9 @@ export class QuizComponent implements OnInit {
   score: number = 0;
   highScore: number = 100; // Ejemplo de valor
   lives: number = 3;
+
+  constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal) {}
+
 
   ngOnInit() {
     this.getIds();
@@ -69,15 +70,16 @@ export class QuizComponent implements OnInit {
     );
   }
 
-
-
   //método para mostrar orden aleatorio de botones
 
-
-  showAnswer(selectedId: string) {
-    this.modalService.open(AnswerComponent).result.then((result) => {
-      this.router.navigate(['/quiz', selectedId]);
+  // Método para abrir el modal y pasar el ID
+  showAnswer(selectedId: string): void {
+    const modalRef = this.modalService.open(AnswerComponent);
+    modalRef.componentInstance.selectedId = selectedId; // Pasa el selectedId al componente hijo
+    modalRef.result.then((result) => {
+      this.router.navigate(['/question', selectedId]);
     });
+
   }
 
 }

@@ -8,15 +8,15 @@ export const routes: Routes = [
 
   },
   {
-    path: 'quiz',
+    path: 'question',
     title: 'quiz',
     loadComponent: () => import('./components/quiz/quiz.component').then(c => c.QuizComponent),
 
   },
   {
-    path: 'quiz/:id',
+    path: 'question/:id',
     title: 'answer',
-    loadComponent: () => import('./components/answer/answer.component').then(c => c.AnswerComponent),
+    loadComponent: () => import('./components/quiz/answer/answer.component').then(c => c.AnswerComponent),
 
   },
 ];
