@@ -15,9 +15,9 @@ export class QuizService {
 
   constructor(private httpClient: HttpClient) { }
 
-  //método listar preguntas
-  getListQuestions(): Observable<Question[]> {
-    return this.httpClient.get<Question[]>(`${API_URL}list`);
+  //método listar id
+  getListId(): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${API_URL}list`);
   }
 
   //método para obtener pregunta por id

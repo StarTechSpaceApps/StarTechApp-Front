@@ -22,21 +22,23 @@ export class QuizComponent implements OnInit {
   router = inject(Router);
   quizService = inject(QuizService);
 
-  questions: Question[] = [];
+  idList: string[] = [];
+  selectedId: string = '';
   score: number = 0;
   highScore: number = 100; // Ejemplo de valor
   lives: number = 3;
 
   ngOnInit() {
-    this.getQuestions();
+    this.getIds();
   }
 
 
-  getQuestions(){
-    this.quizService.getListQuestions().subscribe(
-      (data: Question[]) => {
-        this.questions = data;
-        console.log('Preguntas:', this.questions);
+  getIds():void{
+    this.quizService.getListId().subscribe(
+      (data: string[]) => {
+        this.idList = data;
+        console.log('Preguntas:', this.idList);
+        this.selectedRandomId();
       },
       (error) => {
         console.error('Error al obtener las preguntas:', error); // Manejo de errores
@@ -44,7 +46,14 @@ export class QuizComponent implements OnInit {
     );
   }
 
-  //método para recorrer array id
+  selectedRandomId(): void {
+    if (this.idList.length > 0) {
+      const randomIndex = Math.floor(Math.random() * this.idList.length);
+      this.selectedId = this.idList[randomIndex];
+      console.log('ID seleccionado:', this.selectedId);
+    }
+  }
+
 
 
   //método para mostrar orden aleatorio de botones
