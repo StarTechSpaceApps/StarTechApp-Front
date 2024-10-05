@@ -22,7 +22,7 @@ export class QuizComponent implements OnInit {
   router = inject(Router);
   quizService = inject(QuizService);
 
-  questions: string = "";
+  questions: Question[] = [];
   score: number = 0;
   highScore: number = 100; // Ejemplo de valor
   lives: number = 3;
@@ -31,15 +31,21 @@ export class QuizComponent implements OnInit {
     this.getQuestions();
   }
 
-  //método para obtener pregunta random
+
   getQuestions(){
-    this.quizService.getListQuestions().subscribe((data) => {
-      this.questions = data;
-    });
-    console.log(this.questions);
+    this.quizService.getListQuestions().subscribe(
+      (data: Question[]) => {
+        this.questions = data;
+        console.log('Preguntas:', this.questions);
+      },
+      (error) => {
+        console.error('Error al obtener las preguntas:', error); // Manejo de errores
+      }
+    );
   }
 
   //método para recorrer array id
+
 
   //método para mostrar orden aleatorio de botones
 

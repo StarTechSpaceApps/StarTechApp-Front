@@ -1,10 +1,10 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
-import { environment } from '../../environments/environment.development';
 
-const API_URL = environment.endpoint;
+
+const API_URL = 'http://localhost:3001/';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +16,13 @@ export class QuizService {
   constructor(private httpClient: HttpClient) { }
 
   //método listar preguntas
-  getListQuestions(): Observable<string> {
-    return this.httpClient.get<string>(`${API_URL}`);
+  getListQuestions(): Observable<Question[]> {
+    return this.httpClient.get<Question[]>(`${API_URL}list`);
+  }
+
+  //método para obtener pregunta por id
+  getQuestionById(id: number): Observable<Question> {
+    return this.httpClient.get<Question>(`${API_URL}question/${id}`);
   }
 
 
