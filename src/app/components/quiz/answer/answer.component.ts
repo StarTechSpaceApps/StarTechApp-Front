@@ -42,7 +42,7 @@ export class AnswerComponent implements OnInit {
   }
 
   closeModal() {
-    this.activeModal.close();
+    this.activeModal.close(AnswerComponent);
 
   }
 
