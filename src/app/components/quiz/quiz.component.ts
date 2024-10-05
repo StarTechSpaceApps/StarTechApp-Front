@@ -5,6 +5,8 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { config } from '../../app.config.server';
 import { AnswerComponent } from '../answer/answer.component';
 import { Router } from '@angular/router';
+import { QuizService } from '../../services/quiz.service';
+import { Question } from '../../models/question.model';
 
 @Component({
   selector: 'app-quiz',
@@ -18,6 +20,10 @@ export class QuizComponent {
   modalService = inject(NgbModal);
   config = inject(NgbModalConfig);
   router = inject(Router);
+  quizService = inject(QuizService);
+
+  question: Question[] = [];
+
 
 
   //método para listar preguntas
