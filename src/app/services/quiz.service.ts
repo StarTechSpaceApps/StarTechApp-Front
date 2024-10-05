@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IQuestion } from '../models/questions.interface';
+import { AnswerSchema } from '../models/answer.interface';
 
 //añadir url desde environment
 
@@ -10,7 +10,7 @@ import { IQuestion } from '../models/questions.interface';
 })
 export class QuizService {
 
-  public question: IQuestion[] = [];
+  public question: AnswerSchema[] = [];
   public hhtpClient = Inject(HttpClient);
 
 
