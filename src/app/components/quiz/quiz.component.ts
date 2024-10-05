@@ -24,6 +24,8 @@ export class QuizComponent {
 
   //método para listar preguntas por id
 
+  //método para mostrar orden aleatorio de botones
+
  //Pdt backend
  /*  showAnswer(questionId: number) {
     this.modalService.open(AnswerComponent).result.then((result) => {

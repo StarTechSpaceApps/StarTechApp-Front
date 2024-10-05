@@ -4,7 +4,7 @@ export interface IQuestion {
   correctAnswer: string,
   wrongAnswer: string,
   correctImage: string,
-  wrongImange: string,
+  wrongImage: string,
   answerText: string,
   answerLink: string;
   audience: string; //enum
