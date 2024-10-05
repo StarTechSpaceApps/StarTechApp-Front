@@ -4,20 +4,26 @@ import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 import { environment } from '../../environments/environment.development';
 
-const endpoint = environment.endpoint;
+const API_URL = environment.endpoint;
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuizService {
 
-  public question: Question[] = [];
-  public httpClient = inject(HttpClient);
+  public questions: Question [] = [];
 
-  getRandomQuestion(): Observable<Question[]> {
-    return this.httpClient.get<Question[]>(`${endpoint}questions/random`);
+  constructor(private httpClient: HttpClient) { }
+
+  //método listar preguntas
+  getListQuestions(): Observable<string> {
+    return this.httpClient.get<string>(`${API_URL}`);
   }
 
-  //getQuestionById(id: number): Observable<Question> {}
+
+
+
+
+
 
 }

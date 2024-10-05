@@ -22,17 +22,22 @@ export class QuizComponent implements OnInit {
   router = inject(Router);
   quizService = inject(QuizService);
 
-  question: Question[] = [];
+  questions: string = "";
   score: number = 0;
   highScore: number = 100; // Ejemplo de valor
   lives: number = 3;
 
   ngOnInit() {
-    this.getQuestion();
+    this.getQuestions();
   }
 
   //método para obtener pregunta random
-  getQuestion() {}
+  getQuestions(){
+    this.quizService.getListQuestions().subscribe((data) => {
+      this.questions = data;
+    });
+    console.log(this.questions);
+  }
 
   //método para recorrer array id
 
