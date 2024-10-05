@@ -26,7 +26,17 @@ export class QuizComponent {
 
 
 
-  //método para listar preguntas
+  //método para obtener pregunta random
+/*   getRandomQuestion() {
+    this.quizService.getRandomQuestion().subscribe(
+      (data: Question[]) => {
+        this.question = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  } */
 
   //método para listar preguntas por id
 

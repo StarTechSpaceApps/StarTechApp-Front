@@ -14,7 +14,7 @@ export class QuizService {
   public hhtpClient = Inject(HttpClient);
 
 
-  //getListQuestions(): Observable<Question[]> {}
+  //getRandomQuestion(): Observable<Question[]> {}
 
   //getQuestionById(id: number): Observable<Question> {}
 
