@@ -41,9 +41,8 @@ export class AnswerComponent implements OnInit {
     );
   }
 
-  closeModal() {
-    this.activeModal.close(AnswerComponent);
+ // Cerrar modal
 
-  }
+
 
 }
