@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { config } from '../../app.config.server';
 import { AnswerComponent } from '../answer/answer.component';
+import { ScoreComponent } from '../quiz/score/score.component';
 import { Router } from '@angular/router';
 import { QuizService } from '../../services/quiz.service';
 import { Question } from '../../models/question.model';
@@ -11,7 +12,7 @@ import { Question } from '../../models/question.model';
 @Component({
   selector: 'app-quiz',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ScoreComponent],
   templateUrl: './quiz.component.html',
   styleUrl: './quiz.component.scss'
 })
@@ -23,6 +24,9 @@ export class QuizComponent {
   quizService = inject(QuizService);
 
   question: Question[] = [];
+  score: number = 0;
+  highScore: number = 100; // Ejemplo de valor
+  lives: number = 3;
 
 
 
