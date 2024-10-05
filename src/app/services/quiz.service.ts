@@ -1,9 +1,10 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
+import { environment } from '../../environments/environment.development';
 
-//añadir url desde environment
+const endpoint = environment.endpoint;
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +12,7 @@ import { Question } from '../models/question.model';
 export class QuizService {
 
   public question: Question[] = [];
-  public hhtpClient = Inject(HttpClient);
-
+  public httpClient = inject(HttpClient);
 
   //getRandomQuestion(): Observable<Question[]> {}
 
