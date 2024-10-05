@@ -24,6 +24,7 @@ export class QuizComponent implements OnInit {
 
   idList: string[] = [];
   selectedId: string = '';
+  questions: Question[] = [];
   score: number = 0;
   highScore: number = 100; // Ejemplo de valor
   lives: number = 3;
@@ -51,22 +52,32 @@ export class QuizComponent implements OnInit {
       const randomIndex = Math.floor(Math.random() * this.idList.length);
       this.selectedId = this.idList[randomIndex];
       console.log('ID seleccionado:', this.selectedId);
+      this.getQuestionById(this.selectedId);
     }
+  }
+
+  //método para obtener pregunta por id
+  getQuestionById(id: string): void {
+    this.quizService.getQuestionById(id).subscribe(
+      (data: Question) => {
+        this.questions.push(data);
+        console.log('Pregunta:', data);
+      },
+      (error) => {
+        console.error('Error al obtener la pregunta:', error); // Manejo de errores
+      }
+    );
   }
 
 
 
   //método para mostrar orden aleatorio de botones
 
- //Pdt backend
- /*  showAnswer(questionId: number) {
-    this.modalService.open(AnswerComponent).result.then((result) => {
-      this.router.navigate(['/quiz', questionId]);
-    });
-  } */
 
-    //version harcoded
-    showAnswer() {
-      this.modalService.open(AnswerComponent)
-    }
+  showAnswer(selectedId: string) {
+    this.modalService.open(AnswerComponent).result.then((result) => {
+      this.router.navigate(['/quiz', selectedId]);
+    });
+  }
+
 }

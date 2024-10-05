@@ -21,7 +21,7 @@ export class QuizService {
   }
 
   //método para obtener pregunta por id
-  getQuestionById(id: number): Observable<Question> {
+  getQuestionById(id: string): Observable<Question> {
     return this.httpClient.get<Question>(`${API_URL}question/${id}`);
   }
 
