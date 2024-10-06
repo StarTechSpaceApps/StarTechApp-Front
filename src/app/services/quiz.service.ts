@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Question } from '../models/question.model';
 
 
-const API_URL = 'http://localhost:3001/';
+const API_URL = 'https://startechapp-back-production.up.railway.app/';
 
 @Injectable({
   providedIn: 'root'
