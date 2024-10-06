@@ -1,8 +1,8 @@
 @for(answer of answers; track $index){
 <div class="card m-5">
-    <h5 class="text-success">About Climate Action</h5>
+    <h5 class="fw-bold text-success">About Climate Action</h5>
     <p class="card-title py-2 pb-2">{{ answer.explanation.text}}</p>
-    <p class="fw-bold">More info:</p><a class="card-text"> {{ answer.explanation.link }}</a>
+    <a href="{{ answer.explanation.link }}" class="hidden-link pb-3" target="_blank">More info</a>
     <button class="btn btn-outline-dark mt-3" (click)="closeModal()">Next Question!</button>
 </div>
 }
