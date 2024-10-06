@@ -1,13 +1,26 @@
-.card {
-  border-color: white;
-}
-
 .btn{
   border-radius: 20pt;
+  padding-left: 60pt;
+  padding-right: 60pt;
+  font-size: 10pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+  font-size: 11pt;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  font-size: 32pt;
+}
+
+.row {
+  margin-top: 120pt;
 }
 
 .background-img {
-  background-image: url('../../../assets/img/sol.png.jpg');
+  background-image: url('../../../assets/img/home.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
