@@ -66,10 +66,11 @@ export class QuizComponent implements OnInit {
 
   //método para mostrar orden aleatorio de botones
 
+
   // Método para abrir el modal y pasar el ID
   showAnswer(selectedId: string): void {
     const modalRef = this.modalService.open(AnswerComponent);
-    modalRef.componentInstance.selectedId = selectedId; // Pasa el selectedId al componente hijo
+    modalRef.componentInstance.selectedId = selectedId;
     modalRef.result.then((result) => {
       this.router.navigate(['/question', selectedId]);
     });
