@@ -76,5 +76,17 @@ export class QuizComponent implements OnInit {
     });
 
   }
+  handleButtonRed(event: Event): void {
+    const button = event.target as HTMLElement;
+    button.style.backgroundColor = 'red';
+    button.style.color = 'white';
+    button.style.borderColor = 'red';
+  }
+  handleButtonGreen(event: Event): void {
+    const button = event.target as HTMLElement;
+    button.style.backgroundColor = 'green';
+    button.style.color = 'white';
+    button.style.borderColor = 'green';
+  }
 
 }
