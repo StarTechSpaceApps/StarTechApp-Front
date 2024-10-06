@@ -1,15 +1,24 @@
 <div class="row justify-content-center">
   <div class="col-sm-6 mb-3 mb-sm-0">
     @for (question of questions; track $index){
-      <div class="card">
-        <div class="card-body p-5 text-center">
-          <h3 class="card-title">{{ question.statement}}</h3>
-        </div>
-        <div class="d-grid p-3 mb-4">
-          <a class="btn btn-outline-primary mb-4" (click)="showAnswer(question.id)">{{ question.correctAnswer.text }}</a>
-          <a class="btn btn-outline-primary" (click)="showAnswer(question.id)">{{ question.wrongAnswer.text }}</a>
-        </div>
+      <div class="">
+          <div [ngStyle]="{'background-image': 'url(' + question.correctAnswer.image + ')'}" class="background-image">
+            <h5 class="card-title">{{ question.statement}}</h5>
+            <a class="btn btn-outline-primary" (click)="showAnswer(question.id)">{{ question.correctAnswer.text }}</a>
+          </div>
+      </div>
+      <div>
+          <div [ngStyle]="{'background-image': 'url(' + question.wrongAnswer.image + ')'}" class="background-image">
+            <a class="btn btn-outline-primary" (click)="showAnswer(question.id)">{{ question.wrongAnswer.text }}</a>
+          </div>
       </div>
     }
-    </div>
+  </div>
 </div>
+
+
+
+
+
+
+

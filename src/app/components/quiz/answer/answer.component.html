@@ -1,7 +1,7 @@
 <div class="card-body text-center m-5">
   @for(answer of answers; track $index){
     <h3 class="card-title py-3">{{ answer.explanation.text}}</h3>
-    <p class="card-text py-3">{{ answer.explanation.link }}</p>
+    <a class="card-text py-3">{{ answer.explanation.link }}</a>
   }
   <button class="btn btn-primary px-5">Vuelve al quiz </button>
 </div>
