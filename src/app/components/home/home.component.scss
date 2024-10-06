@@ -3,7 +3,7 @@
   padding-left: 60pt;
   padding-right: 60pt;
   font-size: 10pt;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 p {
@@ -22,13 +22,16 @@ p {
 }
 
 .small-img {
-  width: 150px; // Ajusta el tamaño según sea necesario
-  height: auto; // Mantiene la proporción de la imagen
+  width: 150px;
+  height: auto;
+  margin: 20px;
 }
 
 .small-img-sdg {
-  width: 175px; // Ajusta el tamaño según sea necesario
-  height: auto; // Mantiene la proporción de la imagen
+  width: 175px;
+  height: auto;
+  margin-bottom: 40px;
+  margin-left: 20px;
 }
 
 h1 {
