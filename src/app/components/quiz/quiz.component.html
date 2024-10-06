@@ -3,10 +3,12 @@
     @for(question of questions; track $index){
       <div class="background-image" [ngStyle]="{'background-image': 'url(' + question.correctAnswer.image + ')'}"></div>
 
-      <div class="bg-black p-5">
-        <h5 class="text-light">{{ question.statement }}</h5>
-        <a class="btn btn-outline-light me-3" (click)="showAnswer(question.id)">{{ question.wrongAnswer.text }}</a>
-        <a class="btn btn-outline-light" (click)="showAnswer(question.id)">{{ question.correctAnswer.text }}</a>
+      <div class="bg-light p-5">
+        <h5 class="text-success fw-bold pb-2" >13 CLIMATE ACTION</h5>
+        <p class=" pb-3">{{ question.statement }}</p>
+          <a class="btn btn-outline-dark px-4 me-3" (click)="showAnswer(question.id)">{{ question.wrongAnswer.text }}</a>
+          <a class="btn btn-outline-dark px-4" (click)="showAnswer(question.id)">{{ question.correctAnswer.text }}</a>
+
       </div>
       <div class="background-image" [ngStyle]="{'background-image': 'url(' + question.wrongAnswer.image + ')'}"></div>
 
