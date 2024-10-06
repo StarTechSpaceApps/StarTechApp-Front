@@ -5,7 +5,7 @@
       <h5 class="text-success fw-bold pb-2" >13 CLIMATE ACTION</h5>
       <p class=" pb-3">{{ question.statement }}</p>
       <div class="d-flex">
-        <a class="btn btn-outline-dark px-4 me-3" (click)="showAnswer(question.id); handleButtonRed($event)">{{ question.wrongAnswer.text }}</a>
+        <button class="btn btn-outline-dark px-4 me-3" (click)="showAnswer(question.id); handleButtonRed($event)">{{ question.wrongAnswer.text }}</button>
         <a class="btn btn-outline-dark px-4" (click)="showAnswer(question.id); handleButtonGreen($event)">{{ question.correctAnswer.text }}</a>
       </div>
     </div>

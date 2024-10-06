@@ -8,5 +8,11 @@
 
 .hidden-link {
   text-decoration: none;
-  color: inherit; /* Hereda el color del texto circundante */
+}
+
+a {
+
+  &:hover {
+    text-decoration: underline; /* Añade subrayado al pasar el ratón */
+  }
 }

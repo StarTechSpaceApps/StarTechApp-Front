@@ -2,22 +2,20 @@
   border-radius: 20pt;
   width: 140pt;
 }
-.card {
-  border-color: white;
-}
+
 
 .background-image {
   background-size: cover;
   background-position: center;
   width: 100vw;
-  height: 40vh; /* Alto de la ventana */
-  position: relative; /* Posición relativa para el contenido interno */
+  height: 30vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // color: white; /* Color del texto para que sea visible sobre la imagen */
-  // text-shadow: 1px 1px 2px black; /* Sombra del texto para mejor legibilidad */
 }
+
+
 
 

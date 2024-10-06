@@ -74,8 +74,8 @@ export class QuizComponent implements OnInit {
     modalRef.result.then((result) => {
       this.router.navigate(['/question', selectedId]);
     });
-
   }
+
   handleButtonRed(event: Event): void {
     const button = event.target as HTMLElement;
     button.style.backgroundColor = 'red';
