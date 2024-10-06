@@ -12,6 +12,25 @@ p {
 
 }
 
+.images-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.small-img {
+  width: 150px; // Ajusta el tamaño según sea necesario
+  height: auto; // Mantiene la proporción de la imagen
+}
+
+.small-img-sdg {
+  width: 175px; // Ajusta el tamaño según sea necesario
+  height: auto; // Mantiene la proporción de la imagen
+}
+
 h1 {
   font-size: 30pt;
 }
