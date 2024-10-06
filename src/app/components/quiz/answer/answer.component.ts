@@ -41,8 +41,9 @@ export class AnswerComponent implements OnInit {
     );
   }
 
- // Cerrar modal
-
-
+ //método que cierre el modal
+  closeModal(): void {
+    window.location.reload();
+  };
 
 }
