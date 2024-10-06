@@ -6,9 +6,6 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
-
 p {
   font-size: 10pt;
   font-family: 'Montserrat', sans-serif;
@@ -16,7 +13,7 @@ p {
 }
 
 h1 {
-  font-size: 32pt;
+  font-size: 30pt;
 }
 
 .row {
@@ -24,11 +21,11 @@ h1 {
 }
 
 .background-img {
-  background-image: url('../../../assets/img/home.jpg');
+  background-image: url('../../../assets/img/superearth.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: auto;
   width: auto;
 
 }
