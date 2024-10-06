@@ -36,14 +36,13 @@ export class AnswerComponent implements OnInit {
         console.log('Pregunta:', this.answers);
       },
       (error) => {
-        console.error('Error al obtener la pregunta:', error); // Manejo de errores
+        console.error('Error al obtener la pregunta:', error);
       }
     );
   }
 
- //método que cierre el modal
   closeModal(): void {
     window.location.reload();
-  };
+  }
 
 }

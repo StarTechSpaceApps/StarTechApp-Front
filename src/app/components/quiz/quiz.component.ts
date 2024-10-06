@@ -82,7 +82,7 @@ export class QuizComponent implements OnInit {
 
   showAnswer(selectedId: string): void {
     setTimeout(() => {
-    const modalRef = this.modalService.open(AnswerComponent,  { centered: true,  });
+    const modalRef = this.modalService.open(AnswerComponent,  { centered: true,  backdrop: 'static' });
     modalRef.componentInstance.selectedId = selectedId;
     modalRef.result.then((result) => {
       this.router.navigate(['/question', selectedId]);
