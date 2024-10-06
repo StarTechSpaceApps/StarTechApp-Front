@@ -68,6 +68,8 @@ export class QuizComponent implements OnInit {
     }
   }
 
+
+
   getQuestionById(id: string): void {
     this.quizService.getQuestionById(id).subscribe(
       (data: Question) => {

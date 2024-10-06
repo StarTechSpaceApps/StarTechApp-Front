@@ -42,6 +42,7 @@ export class AnswerComponent implements OnInit {
   }
 
   closeModal(): void {
+    this.activeModal.close();
     window.location.reload();
   }
 

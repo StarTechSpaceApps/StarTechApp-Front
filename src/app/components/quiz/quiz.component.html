@@ -1,7 +1,7 @@
 @for(question of questions; track $index){
   <div class="card">
     <div class=" card-body background-image"[ngStyle]="{'background-image': 'url(' + question.correctAnswer.image + ')'}">
-      <h5 class="logo">Goals for Good</h5>
+      <h5 class="logo" [routerLink]="['/']">Goals for Good</h5>
     </div>
     <div class="card-body bg-white p-5 content">
       <h5 class="text-success fw-bold pb-2" >13 CLIMATE ACTION</h5>
