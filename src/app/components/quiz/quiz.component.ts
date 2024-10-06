@@ -22,6 +22,7 @@ export class QuizComponent implements OnInit {
   idList: string[] = [];
   selectedId: string = '';
   questions: Question[] = [];
+  usedIds: string[] = [];
 
   constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal) {}
 
@@ -44,10 +45,26 @@ export class QuizComponent implements OnInit {
 
   selectedRandomId(): void {
     if (this.idList.length > 0) {
-      const randomIndex = Math.floor(Math.random() * this.idList.length);
-      this.selectedId = this.idList[randomIndex];
+      let randomIndex;
+      let selectedId;
+
+      // Buscar un ID que no haya sido usado
+      do {
+        randomIndex = Math.floor(Math.random() * this.idList.length);
+        selectedId = this.idList[randomIndex];
+      } while (this.usedIds.includes(selectedId) && this.usedIds.length < this.idList.length);
+
+      // Si todos los IDs han sido usados, reiniciar el array de IDs usados
+      if (this.usedIds.length >= this.idList.length) {
+        this.usedIds = [];
+      }
+
+      this.selectedId = selectedId;
       console.log('ID seleccionado:', this.selectedId);
       this.getQuestionById(this.selectedId);
+      this.usedIds.push(this.selectedId); // Añadir el ID al array de IDs usados
+    } else {
+      console.log('No hay más IDs disponibles.');
     }
   }
 
@@ -63,10 +80,6 @@ export class QuizComponent implements OnInit {
     );
   }
 
-  //método para mostrar orden aleatorio de botones
-
-
-  // Método para abrir el modal y pasar el ID
   showAnswer(selectedId: string): void {
     setTimeout(() => {
     const modalRef = this.modalService.open(AnswerComponent,  { centered: true,  });
