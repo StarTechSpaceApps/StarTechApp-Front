@@ -1,17 +1,15 @@
 <div class="row justify-content-center">
   <div class="col-sm-6 mb-3 mb-sm-0">
-    @for (question of questions; track $index){
-      <div class="">
-          <div [ngStyle]="{'background-image': 'url(' + question.correctAnswer.image + ')'}" class="background-image">
-            <h5 class="card-title">{{ question.statement}}</h5>
-            <a class="btn btn-outline-primary" (click)="showAnswer(question.id)">{{ question.correctAnswer.text }}</a>
-          </div>
+    @for(question of questions; track $index){
+      <div class="background-image" [ngStyle]="{'background-image': 'url(' + question.correctAnswer.image + ')'}"></div>
+
+      <div class="bg-black p-5">
+        <h5 class="text-light">{{ question.statement }}</h5>
+        <a class="btn btn-outline-light me-3" (click)="showAnswer(question.id)">{{ question.wrongAnswer.text }}</a>
+        <a class="btn btn-outline-light" (click)="showAnswer(question.id)">{{ question.correctAnswer.text }}</a>
       </div>
-      <div>
-          <div [ngStyle]="{'background-image': 'url(' + question.wrongAnswer.image + ')'}" class="background-image">
-            <a class="btn btn-outline-primary" (click)="showAnswer(question.id)">{{ question.wrongAnswer.text }}</a>
-          </div>
-      </div>
+      <div class="background-image" [ngStyle]="{'background-image': 'url(' + question.wrongAnswer.image + ')'}"></div>
+
     }
   </div>
 </div>
