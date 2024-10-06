@@ -1,9 +1,14 @@
 .card {
-  border-color: white;
+  border: none;
+
 }
 
 .btn{
   border-radius: 20pt;
+}
+
+p, a, button {
+  font-size: 10pt;
 }
 
 .hidden-link {

@@ -29,7 +29,6 @@ export class QuizComponent implements OnInit {
     this.getIds();
   }
 
-
   getIds():void{
     this.quizService.getListId().subscribe(
       (data: string[]) => {
@@ -69,11 +68,13 @@ export class QuizComponent implements OnInit {
 
   // Método para abrir el modal y pasar el ID
   showAnswer(selectedId: string): void {
-    const modalRef = this.modalService.open(AnswerComponent,  { centered: true });
+    setTimeout(() => {
+    const modalRef = this.modalService.open(AnswerComponent,  { centered: true,  });
     modalRef.componentInstance.selectedId = selectedId;
     modalRef.result.then((result) => {
       this.router.navigate(['/question', selectedId]);
     });
+    }, 1000);
   }
 
   handleButtonRed(event: Event): void {

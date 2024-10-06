@@ -1,12 +1,12 @@
 @for(question of questions; track $index){
   <div class="card">
-    <div class=" card-body background-image" [style.backgroundImage]="'url(' + question.correctAnswer.image + ')'"></div>
-    <div class="card-body bg-white p-5">
+    <div class=" card-body background-image"[ngStyle]="{'background-image': 'url(' + question.correctAnswer.image + ')'}"></div>
+    <div class="card-body bg-white p-5 content">
       <h5 class="text-success fw-bold pb-2" >13 CLIMATE ACTION</h5>
       <p class=" pb-3">{{ question.statement }}</p>
       <div class="d-flex">
         <button class="btn btn-outline-dark px-4 me-3" (click)="showAnswer(question.id); handleButtonRed($event)">{{ question.wrongAnswer.text }}</button>
-        <a class="btn btn-outline-dark px-4" (click)="showAnswer(question.id); handleButtonGreen($event)">{{ question.correctAnswer.text }}</a>
+        <button class="btn btn-outline-dark px-4" (click)="showAnswer(question.id); handleButtonGreen($event)">{{ question.correctAnswer.text }}</button>
       </div>
     </div>
     <div class="card-body background-image" [ngStyle]="{'background-image': 'url(' + question.wrongAnswer.image + ')'}"></div>
